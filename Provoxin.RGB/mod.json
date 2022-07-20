@@ -3,7 +3,7 @@
 	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle",
 	"LoadPriority": 0,
 	"RequiredOnClient": false,
-	"Version": "1.4",
+	"Version": "1.5",
 	
 	"Scripts": [
 		{
