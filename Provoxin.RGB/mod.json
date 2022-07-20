@@ -1,9 +1,9 @@
 {
-	"Name": "RGB Pilots",
-	"Description": "Cycles pilot and titan lights through all hues",
+	"Name": "Provoxin.RGB",
+	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle",
 	"LoadPriority": 0,
 	"RequiredOnClient": false,
-	"Version": "1.3",
+	"Version": "1.4",
 	
 	"Scripts": [
 		{
