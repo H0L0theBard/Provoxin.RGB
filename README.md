@@ -7,9 +7,9 @@ Only works with colorblind mode disabled.
 
 convars (press ~ to open the console and set these in real time):
 
-`rgb_ally_color`: sets the lights color of allied pilots and titans. takes r, g, b as a value from 0-1, and brightness. Example: `rgb_ally_color 1 0 1 20` (bright magenta); `rgb_ally_color default` will set light colors to default.
+`rgb_ally_color`: sets the lights color of allied pilots and titans. takes r, g, b as a value from 0-255, and brightness. Example: `rgb_ally_color 255 0 255 20` (bright magenta); `rgb_ally_color default` will set light colors to default.
 
-`rgb_enemy_color`: sets the lights color of enemy pilots and titans. takes r, g, b as a value from 0-1, and brightness. Example: `rgb_enemy_color 0.5 0 0 4` (dim dark red); `rgb_enemy_color default` will set light colors to default.
+`rgb_enemy_color`: sets the lights color of enemy pilots and titans. takes r, g, b as a value from 0-1, and brightness. Example: `rgb_enemy_color 127.5 0 0 4` (dim dark red); `rgb_enemy_color default` will set light colors to default.
 
 `rgb_ally_rainbow`: whether the lights of allied pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
 
