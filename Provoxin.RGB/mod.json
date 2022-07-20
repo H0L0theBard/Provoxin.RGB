@@ -17,31 +17,38 @@
 	"ConVars": [
 		{
 			"Name": "rgb_ally_color",  // ally color when cycling is disabled
-			"DefaultValue": "default"
+			"DefaultValue": "default",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_enemy_color",  // enemy color when cycling is disabled
-			"DefaultValue": "default"
+			"DefaultValue": "default",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors
-			"DefaultValue": "1"
+			"DefaultValue": "1",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_enemy_rainbow",  // whether enemies will cycle through colors
-			"DefaultValue": "1"
+			"DefaultValue": "1",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_cycle_speed",  // speed at which colors are cycled through
-			"DefaultValue": "1"
+			"DefaultValue": "1",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_ally_brightness",  // brightness of ally lights (if cycling through colors)
-			"DefaultValue": "8"
+			"DefaultValue": "8",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_enemy_brightness",  // brightness of enemy lights (if cycling through colors)
-			"DefaultValue": "8"
+			"DefaultValue": "8",
+			"Flags": 16777216
 		}
 	]
 }
