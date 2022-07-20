@@ -101,7 +101,7 @@ void function rgb()
 			string col = GetConVarString("rgb_enemy_color");
 			if (col == "default") { col = DEFAULT_ENEMY_COLORS[cbMode]; SetConVarString("idcolor_enemy" + conVarSuffix, col) }
 			else{
-				array<string> splitrgb = split(GetConVarString("rgb_ally_color"), " ")
+				array<string> splitrgb = split(GetConVarString("rgb_enemy_color"), " ")
 				if (splitrgb.len() == 4){
 
 				string rgb = string(clamp(splitrgb[0].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[1].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[2].tofloat()/255, 0 , 1)) + " " + string(splitrgb[3].tointeger())
