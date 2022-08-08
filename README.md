@@ -1,8 +1,6 @@
 # Provoxin.RGB
 RGB pilot and titan lights mod for Titanfall 2 Northstar
 
-Edit mod.json so you don't have to set params every time you launch!
-
 Only works with colorblind mode disabled.
 
 convars (press ~ to open the console and set these in real time):
