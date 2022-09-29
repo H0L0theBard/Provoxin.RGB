@@ -27,12 +27,12 @@
 		},
 		{
 			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors
-			"DefaultValue": "1",
+			"DefaultValue": "0",
 			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_enemy_rainbow",  // whether enemies will cycle through colors
-			"DefaultValue": "1",
+			"DefaultValue": "0",
 			"Flags": 16777216
 		},
 		{
