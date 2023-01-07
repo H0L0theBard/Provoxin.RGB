@@ -1,20 +1,18 @@
 # Provoxin.RGB
 RGB pilot and titan lights mod for Titanfall 2 Northstar
 
-Only works with colorblind mode disabled.
+Only works with colorblind mode disabled (maybe, didn't test with enabled).
 
-convars (press ~ to open the console and set these in real time):
+This version is compatible with and requires ModSettings 2.0, which can be found at https://northstar.thunderstore.io/package/EladNLG/ModSettings/
 
-`rgb_ally_color`: sets the lights color of allied pilots and titans. takes r, g, b as a value from 0-255, and brightness. Example: `rgb_ally_color 255 0 255 20` (bright magenta); `rgb_ally_color default` will set light colors to default.
+Parameters that are possible to change through Mod Settings:
 
-`rgb_enemy_color`: sets the lights color of enemy pilots and titans. takes r, g, b as a value from 0-255, and brightness. Example: `rgb_enemy_color 127.5 0 0 4` (dim dark red); `rgb_enemy_color default` will set light colors to default.
+Lights colour
 
-`rgb_ally_rainbow`: whether the lights of allied pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
+Lights brightness
 
-`rgb_enemy_rainbow`: whether the lights of enemy pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
+Colour cycle mode
 
-`rgb_cycle_speed`: how quickly colors are cycled through for players who have color cycling enabled. higher values will cycle faster.
+Colour cycle speed
 
-`rgb_ally_brightness`: sets the brightness of allied pilot and titan lights if `rgb_ally_rainbow` is `1`.
-
-`rgb_enemy_brightness`: sets the brightness of enemy pilot and titan lights if `rgb_enemy_rainbow` is `1`.
+These settings are changeable for both allies and enemies.
