@@ -1,9 +1,9 @@
 {
 	"Name": "Provoxin.RGB",
-	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle",
+	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle. Compatible with ModSettings 2.0.",
 	"LoadPriority": 0,
 	"RequiredOnClient": false,
-	"Version": "1.5",
+	"Version": "1.6.0",
 	
 	"Scripts": [
 		{
@@ -12,17 +12,44 @@
 			"ClientCallback": {
 				"After": "rgb_init"
 			}
+		},
+		{
+			"Path": "RGBModSettings.nut",
+			"RunOn": "UI",
+			"UICallback": {
+				"Before": "RGBModSettingsInit"
+			}
 		}
 	],
 	"ConVars": [
 		{
-			"Name": "rgb_ally_color",  // ally color when cycling is disabled
-			"DefaultValue": "default",
+			"Name": "rgb_ally_color_r",  // ally color when cycling is disabled, red value
+			"DefaultValue": "86.7",
 			"Flags": 16777216
 		},
 		{
-			"Name": "rgb_enemy_color",  // enemy color when cycling is disabled
-			"DefaultValue": "default",
+			"Name": "rgb_ally_color_g",  // ally color when cycling is disabled, green value
+			"DefaultValue": "150.5",
+			"Flags": 16777216
+		},
+		{
+			"Name": "rgb_ally_color_b",  // ally color when cycling is disabled, blue value
+			"DefaultValue": "219.3",
+			"Flags": 16777216
+		},
+		{
+			"Name": "rgb_enemy_color_r",  // enemy color when cycling is disabled, red value
+			"DefaultValue": "204.0",
+			"Flags": 16777216
+		},
+		{
+			"Name": "rgb_enemy_color_g",  // enemy color when cycling is disabled, green value
+			"DefaultValue": "63.8",
+			"Flags": 16777216
+		},
+		{
+			"Name": "rgb_enemy_color_b",  // enemy color when cycling is disabled, blue value
+			"DefaultValue": "38.3",
 			"Flags": 16777216
 		},
 		{
@@ -41,12 +68,12 @@
 			"Flags": 16777216
 		},
 		{
-			"Name": "rgb_ally_brightness",  // brightness of ally lights (if cycling through colors)
+			"Name": "rgb_ally_brightness",  // brightness of ally lights
 			"DefaultValue": "8",
 			"Flags": 16777216
 		},
 		{
-			"Name": "rgb_enemy_brightness",  // brightness of enemy lights (if cycling through colors)
+			"Name": "rgb_enemy_brightness",  // brightness of enemy lights
 			"DefaultValue": "8",
 			"Flags": 16777216
 		}

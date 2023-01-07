@@ -5,8 +5,8 @@ void function rgb_init()
 	thread rgb()
 }
 
-const array<string> DEFAULT_ALLY_COLORS = [ "0.34 0.59 0.86 8", "0.24 0.50 0.96 8", "0.0 0.58 0.77 8", "0.28 0.52 0.97 8" ];
-const array<string> DEFAULT_ENEMY_COLORS = [ "0.8 0.25 0.15 8", "0.89 0.78 0.0 8", "1.0 0.627 0.68 8", "0.82 0.74 0.06 8" ];
+//const array<string> DEFAULT_ALLY_COLORS = [ "0.34 0.59 0.86 8", "0.24 0.50 0.96 8", "0.0 0.58 0.77 8", "0.28 0.52 0.97 8" ];
+//const array<string> DEFAULT_ENEMY_COLORS = [ "0.8 0.25 0.15 8", "0.89 0.78 0.0 8", "1.0 0.627 0.68 8", "0.82 0.74 0.06 8" ];
 
 void function rgb()
 {
@@ -81,15 +81,11 @@ void function rgb()
 		}
 		else
 		{
-			string col = GetConVarString("rgb_ally_color");
-			if (col == "default") { col = DEFAULT_ALLY_COLORS[cbMode]; SetConVarString("idcolor_ally" + conVarSuffix, col)}
-			else{
-				array<string> splitrgb = split(GetConVarString("rgb_ally_color"), " ")
-				if (splitrgb.len() == 4){
-					string rgb = string(clamp(splitrgb[0].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[1].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[2].tofloat()/255, 0 , 1)) + " " + string(splitrgb[3].tointeger())
-					SetConVarString("idcolor_ally" + conVarSuffix, rgb)
-				}
-			}
+			float colR = GetConVarFloat("rgb_ally_color_r")/255;
+			float colG = GetConVarFloat("rgb_ally_color_g")/255;
+			float colB = GetConVarFloat("rgb_ally_color_b")/255;
+			
+			SetConVarString("idcolor_ally" + conVarSuffix, colR + " " + colG + " " + colB + " " + GetConVarString("rgb_ally_brightness"))
 		}
 
 		if (GetConVarBool("rgb_enemy_rainbow"))
@@ -98,16 +94,11 @@ void function rgb()
 		}
 		else
 		{
-			string col = GetConVarString("rgb_enemy_color");
-			if (col == "default") { col = DEFAULT_ENEMY_COLORS[cbMode]; SetConVarString("idcolor_enemy" + conVarSuffix, col) }
-			else{
-				array<string> splitrgb = split(GetConVarString("rgb_enemy_color"), " ")
-				if (splitrgb.len() == 4){
-
-				string rgb = string(clamp(splitrgb[0].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[1].tofloat()/255, 0 , 1)) + " " + string(clamp(splitrgb[2].tofloat()/255, 0 , 1)) + " " + string(splitrgb[3].tointeger())
-				SetConVarString("idcolor_enemy" + conVarSuffix, rgb)
-				}
-			}
+			float colR = GetConVarFloat("rgb_enemy_color_r")/255;
+			float colG = GetConVarFloat("rgb_enemy_color_g")/255;
+			float colB = GetConVarFloat("rgb_enemy_color_b")/255;
+			
+			SetConVarString("idcolor_enemy" + conVarSuffix, colR + " " + colG + " " + colB + " " + GetConVarString("rgb_enemy_brightness"))
 		}
 	}
 }
