@@ -1,7 +1,7 @@
 {
 	"Name": "Provoxin.RGB",
 	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle. Compatible with ModSettings 2.0.",
-	"LoadPriority": 0,
+	"LoadPriority": 2,
 	"RequiredOnClient": false,
 	"Version": "1.6.0",
 	
@@ -23,34 +23,13 @@
 	],
 	"ConVars": [
 		{
-			"Name": "rgb_ally_color_r",  // ally color when cycling is disabled, red value
-			"DefaultValue": "86.7",
+			"Name": "rgb_ally_color",
+			"DefaultValue": "0.34 0.59 0.86",
 			"Flags": 16777216
 		},
 		{
-			"Name": "rgb_ally_color_g",  // ally color when cycling is disabled, green value
-			"DefaultValue": "150.5",
-			"Flags": 16777216
-		},
-		{
-			"Name": "rgb_ally_color_b",  // ally color when cycling is disabled, blue value
-			"DefaultValue": "219.3",
-			"Flags": 16777216
-		},
-		{
-			"Name": "rgb_enemy_color_r",  // enemy color when cycling is disabled, red value
-			"DefaultValue": "204.0",
-			"Flags": 16777216
-		},
-		{
-			"Name": "rgb_enemy_color_g",  // enemy color when cycling is disabled, green value
-			"DefaultValue": "63.8",
-			"Flags": 16777216
-		},
-		{
-			"Name": "rgb_enemy_color_b",  // enemy color when cycling is disabled, blue value
-			"DefaultValue": "38.3",
-			"Flags": 16777216
+			"Name": "rgb_enemy_color",
+			"DefaultValue": "0.8 0.25 0.15"
 		},
 		{
 			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors
