@@ -2,27 +2,27 @@ global function RGBModSettingsInit
 
 void function RGBModSettingsInit()
 {
-	AddModTitle("Provoxin RGB")
+	ModSettings_AddModTitle("Provoxin RGB")
 
-	AddModCategory( "Colors" )
+	ModSettings_AddModCategory( "Colors" )
 
 	AddModSettingsRGBColorPicker( "idcolor_ally", "rgb_ally_color", "Friendly Color" )
 	AddModSettingsRGBColorPicker( "idcolor_enemy", "rgb_enemy_color", "Enemy Color" )
 
-	AddConVarSettingSlider( "rgb_ally_brightness", "Brightness", 0, 50, 0.1, true )
+	ModSettings_AddSliderSetting( "rgb_ally_brightness", "Brightness", 0, 50, 0.1, true )
 
-	AddConVarSettingSlider( "rgb_enemy_brightness", "Brightness", 0, 50, 0.1, true )
+	ModSettings_AddSliderSetting( "rgb_enemy_brightness", "Brightness", 0, 50, 0.1, true )
 
-	AddModCategory("Colour Cycling Settings")
+	ModSettings_AddModCategory("Colour Cycling Settings")
 
-	AddModSettingsDropDown( "rgb_ally_rainbow", "Ally Rainbow Cycle", [ "Disabled", "Enabled" ], true )
-	AddModSettingsDropDown( "rgb_enemy_rainbow", "Enemy Rainbow Cycle", [ "Disabled", "Enabled" ], true )
+	ModSettings_AddDropDown( "rgb_ally_rainbow", "Ally Rainbow Cycle", [ "Disabled", "Enabled" ], true )
+	ModSettings_AddDropDown( "rgb_enemy_rainbow", "Enemy Rainbow Cycle", [ "Disabled", "Enabled" ], true )
 	AddConVarSetting("rgb_cycle_speed", "Colour cycling speed", "float")
 }
 
 void function AddModSettingsRGBColorPicker( string conVar, string archive, string buttonLabel, bool liveUpdate = false )
 {
-	AddModSettingsButton( buttonLabel,
+	ModSettings_AddButton( buttonLabel,
 		void function() : ( conVar, archive )
 		{
 			thread void function() : ( conVar, archive )
