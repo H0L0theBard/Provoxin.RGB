@@ -3,7 +3,7 @@
 	"Description": "Allows setting the colour of pilot/titan lights or RGB cycle. Compatible with ModSettings 2.0.",
 	"LoadPriority": 2,
 	"RequiredOnClient": false,
-	"Version": "1.6.0",
+	"Version": "1.7.0",
 	
 	"Scripts": [
 		{
