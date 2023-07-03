@@ -29,22 +29,25 @@ void function AddModSettingsRGBColorPicker( string conVar, string archive, strin
 			{
 				EndSignal( uiGlobal.signalDummy, "ColorPickerSelected" )
 				OpenColorPickerDialog( conVar, false, false, false )
+
 				OnThreadEnd( void function()
 					{
 						CloseSubmenu()
 					}
 				)
+
+				// color blind stuff
+				int cbMode = GetConVarInt( "colorblind_mode" )
+				string conVarSuffix = cbMode != 0 ? "_cb" + cbMode : ""
+				string fullColorConVar = conVar + conVarSuffix
+
 				while( true )
 				{
 					table response = WaitSignal( uiGlobal.signalDummy, "ColorPickerLiveUpdate", "ColorPickerDialogReset" )
-					int cbMode = GetConVarInt( "colorblind_mode" )
-					string conVarSuffix = cbMode != 0 ? "_cb" + cbMode : ""
-
-					printt( response )
 
 					if( response.signal == "ColorPickerDialogReset" )
 					{
-						SetConVarToDefault( conVar + conVarSuffix )
+						SetConVarToDefault( fullColorConVar )
 						SetConVarToDefault( archive )
 						return
 					}
@@ -54,7 +57,7 @@ void function AddModSettingsRGBColorPicker( string conVar, string archive, strin
 						continue
 					expect vector( rgb )
 
-					SetConVarString( conVar + conVarSuffix, format( "%.1f %.1f %1.f %s", rgb.x / 255, rgb.y / 255, rgb.z / 255, GetConVarString( "rgb_ally_brightness" ) ) )
+					SetConVarString( fullColorConVar, format( "%.1f %.1f %1.f %s", rgb.x / 255, rgb.y / 255, rgb.z / 255, GetConVarString( "rgb_ally_brightness" ) ) )
 					SetConVarString( archive, format( "%.1f %.1f %1.f", rgb.x / 255, rgb.y / 255, rgb.z / 255 ) )
 				}
 			}()
