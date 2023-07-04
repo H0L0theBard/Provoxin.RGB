@@ -9,9 +9,9 @@ void function RGBModSettingsInit()
 	AddModSettingsRGBColorPicker( "idcolor_ally", "rgb_ally_color", "Friendly Color" )
 	AddModSettingsRGBColorPicker( "idcolor_enemy", "rgb_enemy_color", "Enemy Color" )
 
-	ModSettings_AddSliderSetting( "rgb_ally_brightness", "Brightness", 0, 50, 0.1, true )
+	ModSettings_AddSliderSetting( "rgb_ally_brightness", "Friendly Brightness", 0, 50, 0.1, true )
 
-	ModSettings_AddSliderSetting( "rgb_enemy_brightness", "Brightness", 0, 50, 0.1, true )
+	ModSettings_AddSliderSetting( "rgb_enemy_brightness", "Enemy Brightness", 0, 50, 0.1, true )
 
 	ModSettings_AddModCategory("Colour Cycling Settings")
 
