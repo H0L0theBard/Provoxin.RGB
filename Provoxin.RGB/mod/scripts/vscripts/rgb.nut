@@ -2,6 +2,13 @@ global function rgb_init
 
 void function rgb_init()
 {
+	int cbMode = GetConVarInt("colorblind_mode")
+	string conVarSuffix = cbMode != 0 ? "_cb" + cbMode : ""
+	array<string> allyValues = split( GetConVarString( "rgb_ally_color" ), " " ) // idcolor isn't persisted
+	array<string> enemyValues = split( GetConVarString( "rgb_enemy_color" ), " " )
+	SetConVarString( "idcolor_ally" + conVarSuffix, format( "%.3f %.3f %.3f %s", float( allyValues[0] ), float( allyValues[1] ), float( allyValues[2] ), GetConVarString( "rgb_ally_brightness" ) ) )
+	SetConVarString( "idcolor_enemy" + conVarSuffix, format( "%.3f %.3f %.3f %s", float( enemyValues[0] ), float( enemyValues[1] ), float( enemyValues[2] ), GetConVarString( "rgb_enemy_brightness" ) ) )
+
 	thread rgb()
 }
 
@@ -79,26 +86,10 @@ void function rgb()
 		{
 			SetConVarString("idcolor_ally" + conVarSuffix, r + " " + g + " " + b + " " + GetConVarString("rgb_ally_brightness"));
 		}
-		else
-		{
-			float colR = GetConVarFloat("rgb_ally_color_r")/255;
-			float colG = GetConVarFloat("rgb_ally_color_g")/255;
-			float colB = GetConVarFloat("rgb_ally_color_b")/255;
-			
-			SetConVarString("idcolor_ally" + conVarSuffix, colR + " " + colG + " " + colB + " " + GetConVarString("rgb_ally_brightness"))
-		}
 
 		if (GetConVarBool("rgb_enemy_rainbow"))
 		{
 			SetConVarString("idcolor_enemy" + conVarSuffix, r + " " + g + " " + b + " " + GetConVarString("rgb_enemy_brightness"));
-		}
-		else
-		{
-			float colR = GetConVarFloat("rgb_enemy_color_r")/255;
-			float colG = GetConVarFloat("rgb_enemy_color_g")/255;
-			float colB = GetConVarFloat("rgb_enemy_color_b")/255;
-			
-			SetConVarString("idcolor_enemy" + conVarSuffix, colR + " " + colG + " " + colB + " " + GetConVarString("rgb_enemy_brightness"))
 		}
 	}
 }
