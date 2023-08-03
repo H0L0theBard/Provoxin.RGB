@@ -29,7 +29,8 @@
 		},
 		{
 			"Name": "rgb_enemy_color",
-			"DefaultValue": "0.8 0.25 0.15"
+			"DefaultValue": "0.8 0.25 0.15",
+			"Flags": 16777216
 		},
 		{
 			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors
